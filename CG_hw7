@@ -1,0 +1,22 @@
+#!/bin/bash
+
+THETA1=-51
+THETA2=39
+THETA3=65
+LINK1=4
+LINK2=3
+LINK3=2.5
+
+while getopts "t:u:v:l:m:n:" opt; do
+  case $opt in
+    t) THETA1=$OPTARG ;;
+    u) THETA2=$OPTARG ;;
+    v) THETA3=$OPTARG ;;
+    l) LINK1=$OPTARG ;;
+    m) LINK2=$OPTARG ;;
+    n) LINK3=$OPTARG ;;
+    *) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
+  esac
+done
+
+python3 hierarchical.py -t $THETA1 -u $THETA2 -v $THETA3 -l $LINK1 -m $LINK2 -n $LINK3

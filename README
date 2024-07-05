@@ -1,0 +1,43 @@
+Kiah Johnson
+CS536 - Homework Assignment Seven
+Hierarchical Models
+
+Hierarchical Models Evaluator with a Open Inventor File Generator
+
+Features
+    This python script computes a hierarchical, robot like model (4-link, 3-joint robot).
+    
+    - Input: Parameter arguments in terminal
+    - Output: A Open Inventor file with the generated hierarchical model.
+
+Environment
+    - Language: Python 3
+    - OS: Compatible with Windows, macOS, and Linux
+    - Interpreter: Python interpreter
+
+Usage
+    Running the Script
+        1. Clone or download the script with example inputs into local machine
+        2. Open terminal with directory containing the script
+        3. Run the script with the following structure:
+            ./CG_hw7 -t THETA1 -u THETA2 -v THETA3 -l LINK1 -m LINK2 -n LINK3
+
+    Arguments
+        - '-t THETA1': The rotation around the Z axis in world coodinates(Default is -51)
+        - '-u THETA2': The rotation around the Y axis of Link 1's cooridnate system (Default is 39)
+        - '-v THETA3': The rotation around the Y axis of Link 2's cooridnate system (Default is 65)
+        - '-l LINK1': The origins of links coordinate system in the center of their bases, measured in Z direction (Default is 4)
+        - '-m LINK2': The origins of links coordinate system in the center of their bases, measured in Z direction  (Default is 3)
+        - '-n LINK3': The origins of links coordinate system in the center of their bases, measured in Z direction  (Default is 2.5)
+
+    Output
+        The script prints a standard out version of the Open Inventor file and can generate a separate Open Inventor file which is placed within the same directory as script.
+
+Examples
+    1. This command evaluates the hierarchical model using the default inputs. It will print to standard out:
+
+        ./CG_hw7
+
+    2. This command evaluates the hierarchical model with the default values for THETA1 and LINK2 but customized values for the rest of the arguments. The output will be saved to a file called 'my_model.iv':
+
+        ./CG_hw7 -t -20 -m 4 > my_model.iv
